@@ -1,0 +1,18 @@
+.top-container {
+  background-color: #F3F0EB;
+  min-height: calc(100vh - 3rem);
+  padding-top: 20px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  justify-content: space-between;
+  row-gap: 2rem;
+
+  div {
+    display: inline-block;
+    background-color: powderblue;
+    height: 20rem;
+  }
+}
