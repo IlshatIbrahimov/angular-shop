@@ -1,0 +1,27 @@
+<div class="back">
+  <div class="user">
+    <form class="form" (ngSubmit)="authService.register()">
+      <div class="form__group">
+        <input type="text" placeholder="Name" class="form__input" [(ngModel)]="authService.name" name="name"/>
+      </div>
+
+      <div class="form__group">
+        <input type="text" placeholder="Surname" class="form__input" [(ngModel)]="authService.surname" name="surname"/>
+      </div>
+
+      <div class="form__group">
+        <input type="email" placeholder="Email" class="form__input" [(ngModel)]="authService.email" name="email"/>
+      </div>
+
+      <div class="form__group">
+        <input type="password" placeholder="Password" class="form__input" [(ngModel)]="authService.password" name="password"/>
+      </div>
+
+      <button class="btn" type="submit">Register</button>
+
+      <div class="redirect">
+        <a routerLink="/login" class="login-page">Login</a>
+      </div>
+    </form>
+  </div>
+</div>

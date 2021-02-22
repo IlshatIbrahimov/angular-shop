@@ -7,7 +7,7 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, 200px);
-  justify-content: space-between;
+  justify-content: space-around;
   row-gap: 2rem;
 
   div {
