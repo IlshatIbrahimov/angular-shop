@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="group-name">Роллы</div>
+  <div class="wrapper">
+    <div *ngFor="let item of items">
+      <img src="http://localhost:8080{{item.imageUrl}}" alt="">
+      <p class="item-name">{{item.name}}</p>
+      <p class="price">
+        <button>{{item.price}}</button>
+        <span class="size">{{item.size}}</span>
+      </p>
+    </div>
+  </div>
+</div>

@@ -6,10 +6,13 @@
       </div>
 
       <div class="form__group">
-        <input type="password" placeholder="Password" class="form__input" name="password" [(ngModel)]="authService.password"/>
+        <input type="password" placeholder="Password" class="form__input" name="password"
+               [(ngModel)]="authService.password"/>
       </div>
 
-      <button class="btn" type="submit">Login</button>
+      <div class="btn-div">
+        <button class="btn" type="submit">Login</button>
+      </div>
 
       <div class="redirect">
         <a routerLink="/register" class="login-page">Register</a>

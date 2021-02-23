@@ -11,13 +11,15 @@ import {LoginComponent} from './login/login.component';
 import {HeaderComponent} from './header/header.component';
 import {FormsModule} from '@angular/forms';
 import {RegisterComponent} from './register/register.component';
-import {LoginGuard} from './guard/login.guard';
+import {ProfileGuard} from './guard/profile-guard';
+import {LoginGuard} from './guard/login-guard';
+import { GroupComponent } from './group/group.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainPageComponent},
   {path: 'menu', component: MenuComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
+  {path: 'register', component: RegisterComponent, canActivate: [LoginGuard]},
 ];
 
 @NgModule({
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     MainPageComponent,
     LoginComponent,
     HeaderComponent,
-    RegisterComponent
+    RegisterComponent,
+    GroupComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [LoginGuard],
+  providers: [ProfileGuard, LoginGuard],
   bootstrap: [
     AppComponent
   ]

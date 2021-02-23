@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {AuthService} from '../services/auth.service';
-import {LoginGuard} from '../guard/login.guard';
+import {ProfileGuard} from '../guard/profile-guard';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +9,7 @@ import {LoginGuard} from '../guard/login.guard';
 })
 export class HeaderComponent {
 
-  constructor(public authService: AuthService, private loginGuard: LoginGuard) {
+  constructor(public authService: AuthService, private loginGuard: ProfileGuard) {
   }
 
   name = '';

@@ -1,11 +1,7 @@
 <div class="top-container">
-  <div class="wrapper container">
-    <div>
-
-    </div>
-    <div>Two</div>
-    <div>Three</div>
-    <div>Four</div>
-    <div>Five</div>
-  </div>
+  <app-group
+    *ngFor="let item of groups"
+    [items]="item.itemList"
+    [name]="item.name"
+  ></app-group>
 </div>
