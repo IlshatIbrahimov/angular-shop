@@ -1,0 +1,38 @@
+<div>
+  <img src="http://localhost:8080{{item.imageUrl}}" (click)="open(content, item)">
+  <p class="item-name">{{item.name}}</p>
+  <p class="price">
+    <button *ngIf="count === 0; else inCard" (click)="increaseCounter()">{{item.price}} руб.</button>
+    <span class="size" *ngIf="count === 0; else sum">{{item.size}}</span>
+  </p>
+
+  <ng-template #inCard>
+    <button class="changeCountButton" (click)="increaseCounter()">+</button>
+    <span class="counter">{{count}}</span>
+    <button class="changeCountButton" (click)="decreaseCounter()">-</button>
+  </ng-template>
+
+  <ng-template #sum>
+    <span class="size">{{count * item.price}} руб.</span>
+  </ng-template>
+
+</div>
+
+<ng-template #content>
+  <div class="modal-info">
+    <img src="http://localhost:8080{{item.imageUrl}}" alt="">
+    <p class="item-name">{{item.name}}</p>
+    <p>лосось, масаго оранжевая, рис, киноа, огурец, салат Чука, помидоры Черри, капуста
+      краснокочанная, бобы Эдамаме, кунжут белый, кунжут черный, соус ореховый, спайси соус</p>
+    <p class="price">
+      <button *ngIf="count === 0; else inCard" (click)="increaseCounter()">{{item.price}} руб.</button>
+      <span class="size" *ngIf="count === 0; else sum">{{item.size}}</span>
+    </p>
+
+    <ng-template #inCard>
+      <button class="changeCountButton" (click)="increaseCounter()">+</button>
+      <span class="counter">{{count}}</span>
+      <button class="changeCountButton" (click)="decreaseCounter()">-</button>
+    </ng-template>
+  </div>
+</ng-template>

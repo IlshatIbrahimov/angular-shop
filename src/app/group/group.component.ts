@@ -1,18 +1,36 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-group',
   templateUrl: './group.component.html',
   styleUrls: ['./group.component.scss']
 })
-export class GroupComponent implements OnInit {
+export class GroupComponent {
 
-  constructor() { }
 
-  @Input() items : any = {};
-  @Input() name = "";
+  @Input() group: any = {};
 
-  ngOnInit(): void {
+  constructor(private modalService: NgbModal) {
+  }
+
+  item: any = {};
+
+  // @ts-ignore
+  open(content, item) {
+    console.log(item);
+    this.item = item;
+    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 
 }

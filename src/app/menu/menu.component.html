@@ -1,7 +1,6 @@
 <div class="top-container">
   <app-group
-    *ngFor="let item of groups"
-    [items]="item.itemList"
-    [name]="item.name"
+    *ngFor="let group of groups"
+    [group] = group
   ></app-group>
 </div>

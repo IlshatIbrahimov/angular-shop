@@ -1,0 +1,70 @@
+div {
+  background-color: #faf9f7;
+  display: inline-block;
+  padding: 1rem;
+  height: 25vw;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  button {
+    background-color: transparent;
+    padding: 0.5vw;
+    width: 40%;
+    border-radius: 0.5rem;
+    font-size: 1vw;
+  }
+}
+
+.item-name {
+  padding-top: 1rem;
+  font-size: 1vw;
+  height: 7vh;
+}
+
+.container {
+  width: 80vw !important;
+  max-width: 80vw !important;
+}
+
+.wrapper {
+  height: auto;
+}
+
+img {
+  width: 100%;
+}
+
+.size {
+  margin-left: 1rem;
+}
+
+.changeCountButton {
+  width: 15% !important;
+}
+
+.counter {
+  margin-left: 0.22rem;
+  margin-right: 0.22rem;
+}
+
+.modal-info {
+
+  height: auto !important;
+
+  img {
+    width: 60%;
+    margin: 1rem auto;
+    display: block;
+  }
+
+  .item-name {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+
+  p {
+    text-align: center;
+  }
+}
+

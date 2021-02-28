@@ -23,9 +23,11 @@ export class AuthService {
       email: this.email,
       password: this.password
     }).subscribe((response) => {
+      console.log(response);
       localStorage.setItem('JWT', response.jwt);
       localStorage.setItem('NAME', response.user.name);
       localStorage.setItem('SURNAME', response.user.surname);
+      localStorage.setItem('ID', response.user.id);
       this.router.navigate(['/menu']);
     }, error => {
       console.log(error);
@@ -41,6 +43,7 @@ export class AuthService {
       localStorage.setItem('JWT', response.jwt);
       localStorage.setItem('NAME', response.user.name);
       localStorage.setItem('SURNAME', response.user.surname);
+      localStorage.setItem('ID', response.user.id);
       console.log('success login');
       this.router.navigate(['/menu']);
     }, error => {

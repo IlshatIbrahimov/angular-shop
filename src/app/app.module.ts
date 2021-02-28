@@ -14,6 +14,7 @@ import {RegisterComponent} from './register/register.component';
 import {ProfileGuard} from './guard/profile-guard';
 import {LoginGuard} from './guard/login-guard';
 import { GroupComponent } from './group/group.component';
+import { ItemComponent } from './item/item.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainPageComponent},
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     LoginComponent,
     HeaderComponent,
     RegisterComponent,
-    GroupComponent
+    GroupComponent,
+    ItemComponent
   ],
   imports: [
     BrowserModule,

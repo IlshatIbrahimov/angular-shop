@@ -1,25 +1,10 @@
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 15vw);
-  justify-content: space-around;
+  grid-template-columns: repeat(auto-fit, 17vw);
+  justify-content: space-between;
   row-gap: 2rem;
   width: 80vw;
-
-  div {
-    background-color: #faf9f7;
-    display: inline-block;
-    padding: 1rem;
-    height: 21vw;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-
-    button {
-      background-color: transparent;
-      padding: 0.5rem;
-      width: 30%;
-      border-radius: 0.5rem;
-    }
-  }
+  margin-bottom: 2rem;
 }
 
 .group-name {
@@ -27,36 +12,7 @@
   font-size: 2rem;
 }
 
-.item-name {
-  padding-top: 1rem;
-  font-size: 1.5rem;
-}
 
-.container {
-  width: 80vw !important;
-  max-width: 80vw !important;
-}
 
-.wrapper {
-  height: auto;
-}
 
-img {
-  width: 100%;
-}
-
-.size {
-  margin-left: 1rem;
-}
-
-@keyframes bgrandom {
-  0% { background: linear-gradient(90deg, rgba(255,255,255,0.98) 50%, rgba(255,255,255,0.96) 0%); }
-  50% { background: linear-gradient(90deg, rgba(255,255,255,0.98) 50%, rgba(255,255,255,0.96) 0%); }
-
-  55% { background: linear-gradient(90deg,  rgba(255,255,255,0.96) 50%, rgba(255,255,255,0.98) 0%); }
-  80% { background: linear-gradient(90deg, rgba(255,255,255,0.96)  50%, rgba(255,255,255,0.98) 0%); }
-
-  85% { background: linear-gradient(90deg, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0.94) 0%); }
-  100% { background: linear-gradient(90deg, rgba(255,255,255,0.96) 50%, rgba(255,255,255,0.94) 0%); }
-}
 
