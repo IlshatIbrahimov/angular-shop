@@ -1,6 +1,9 @@
 <div class="back">
   <div class="user">
     <form class="form" (ngSubmit)="authService.register()">
+
+      <p style="text-align: center; padding-bottom: 2rem; font-size: 1.5rem;">Регистрация</p>
+
       <div class="form__group">
         <input type="text" placeholder="Name" class="form__input" [(ngModel)]="authService.name" name="name"/>
       </div>

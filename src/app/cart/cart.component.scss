@@ -1,0 +1,35 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 17vw);
+  justify-content: left;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  width: 80vw;
+  margin-bottom: 2rem;
+}
+
+.group-name {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.price {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+button {
+  width: 15vw;
+  height: 3vw;
+  background-color: #242323;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+
+
+
+

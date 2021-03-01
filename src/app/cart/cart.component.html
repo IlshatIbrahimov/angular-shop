@@ -1,0 +1,16 @@
+<div class="top-container">
+  <div class="container">
+    <div class="group-name">Корзина</div>
+    <div class="wrapper">
+      <div *ngFor="let item of items | keyvalue">
+        <app-item [item]="item.value"></app-item>
+      </div>
+    </div>
+    <div class="price">Ваш заказ на сумму: {{getPrice()}} руб.</div>
+    <button (click)="open(content)">Оформить</button>
+  </div>
+</div>
+
+<ng-template #content>
+  <p style="text-align: center">{{name}}, ваш заказ был успешно оформлен!</p>
+</ng-template>

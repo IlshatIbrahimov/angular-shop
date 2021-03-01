@@ -14,8 +14,7 @@ export class ItemComponent implements OnInit {
   @Input() item: any = {};
   count: number = 0;
 
-  constructor(private modalService: NgbModal, private cart: CartService,
-              private header: HeaderComponent) {
+  constructor(private modalService: NgbModal, private cart: CartService) {
   }
 
   ngOnInit(): void {

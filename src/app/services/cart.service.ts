@@ -8,6 +8,7 @@ import {BehaviorSubject} from 'rxjs';
 export class CartService {
 
   public countSource = new BehaviorSubject<number>(this.getSize());
+  public cartSource = new BehaviorSubject<number>(localStorage.getItem('CART'));
 
   addToCart(item, count) {
     let cart = JSON.parse(localStorage.getItem('CART') as string || '{}');
@@ -15,6 +16,7 @@ export class CartService {
     cart[item.id] = item;
     localStorage.setItem('CART', JSON.stringify(cart));
     this.countSource.next(this.getSize());
+    this.cartSource.next(cart)
   }
 
   removeFromCart(item, count) {
@@ -23,11 +25,13 @@ export class CartService {
       delete cart[item.id];
       localStorage.setItem('CART', JSON.stringify(cart));
       this.countSource.next(this.getSize());
+      this.cartSource.next(cart)
       return;
     }
     item.count = count;
     cart[item.id] = item;
     localStorage.setItem('CART', JSON.stringify(cart));
+    this.cartSource.next(cart)
   }
 
   getCount(id) {
@@ -40,7 +44,6 @@ export class CartService {
 
   getSize() {
     let cart = JSON.parse(localStorage.getItem('CART') as string || '{}');
-    console.log(Object.keys(cart).length);
     return Object.keys(cart).length;
   }
 }

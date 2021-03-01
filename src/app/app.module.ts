@@ -13,14 +13,16 @@ import {FormsModule} from '@angular/forms';
 import {RegisterComponent} from './register/register.component';
 import {ProfileGuard} from './guard/profile-guard';
 import {LoginGuard} from './guard/login-guard';
-import { GroupComponent } from './group/group.component';
-import { ItemComponent } from './item/item.component';
+import {GroupComponent} from './group/group.component';
+import {ItemComponent} from './item/item.component';
+import {CartComponent} from './cart/cart.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainPageComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
   {path: 'register', component: RegisterComponent, canActivate: [LoginGuard]},
+  {path: 'cart', component: CartComponent}
 ];
 
 @NgModule({
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     RegisterComponent,
     GroupComponent,
-    ItemComponent
+    ItemComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

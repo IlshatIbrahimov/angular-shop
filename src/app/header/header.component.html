@@ -1,15 +1,17 @@
 <header>
-  <span></span>
+  <span>
+    <button *ngIf="router.url !== '/menu'" class="menu" routerLink="/menu">Меню</button>
+  </span>
   <span class="address">Ул. Профсоюзная 4, Казань | Ежедневно с 10:00 до 22:00</span>
   <span class="lk">
 
-    <button type="button" class="btn btn-secondary">
+    <button type="button" class="btn btn-secondary" routerLink="/cart">
       Cart <span class="badge badge-dark">{{size}}</span>
     </button>
 
     <a href="#" (click)="$event.preventDefault(); onProfileClick()"
        *ngIf="authService.isAuthenticated()">Личный кабинет</a>
-    <a href="#" (click)="$event.preventDefault(); onProfileClick()" *ngIf="!authService.isAuthenticated()">Log in</a>
+    <a href="#" (click)="$event.preventDefault(); onProfileClick()" *ngIf="!authService.isAuthenticated()">Войти</a>
   </span>
   <div class="profile" *ngIf="isProfilePageVisible">
     <div>{{name}}</div>

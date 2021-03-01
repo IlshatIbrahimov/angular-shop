@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {ProfileGuard} from '../guard/profile-guard';
 import {CartService} from '../services/cart.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,8 @@ export class HeaderComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private loginGuard: ProfileGuard,
-    private cart: CartService
+    private cart: CartService,
+    public router: Router
   ) {
   }
 
