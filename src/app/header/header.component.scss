@@ -26,22 +26,6 @@ header {
   }
 }
 
-.badge {
-  margin-top: 5px;
-}
-
-.badge:after {
-  content: attr(value);
-  font-size: 1rem;
-  background: red;
-  border-radius: 20%;
-  padding: 5px;
-  position: relative;
-  left: -1px;
-  top: 5px;
-  opacity: 0.9;
-}
-
 .profile {
   margin: 0 auto;
 
@@ -67,4 +51,11 @@ header {
   button {
     background-color: #fff;
   }
+}
+
+.btn-secondary {
+  margin-right: 2rem;
+  padding: 0.05rem;
+  background-color: #f3f0eb;
+  color: black;
 }

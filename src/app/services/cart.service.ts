@@ -1,38 +1,28 @@
 // @ts-nocheck
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {Router} from '@angular/router';
-import {AuthService} from './auth.service';
+import {BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
 
-  name = '';
-  surname = '';
-  email = '';
-  password = '';
-
-  constructor(private http: HttpClient, private router: Router, private auth: AuthService) {
-  }
-
-  checkIfItemInCart() {
-
-  }
+  public countSource = new BehaviorSubject<number>(this.getSize());
 
   addToCart(item, count) {
     let cart = JSON.parse(localStorage.getItem('CART') as string || '{}');
     item.count = count;
     cart[item.id] = item;
     localStorage.setItem('CART', JSON.stringify(cart));
+    this.countSource.next(this.getSize());
   }
 
   removeFromCart(item, count) {
     let cart = JSON.parse(localStorage.getItem('CART') as string || '{}');
     if (count === 0) {
-      delete cart[item.id]
+      delete cart[item.id];
       localStorage.setItem('CART', JSON.stringify(cart));
+      this.countSource.next(this.getSize());
       return;
     }
     item.count = count;
@@ -46,5 +36,11 @@ export class CartService {
       return 0;
     }
     return cart[id].count;
+  }
+
+  getSize() {
+    let cart = JSON.parse(localStorage.getItem('CART') as string || '{}');
+    console.log(Object.keys(cart).length);
+    return Object.keys(cart).length;
   }
 }

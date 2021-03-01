@@ -2,12 +2,13 @@
   <span></span>
   <span class="address">Ул. Профсоюзная 4, Казань | Ежедневно с 10:00 до 22:00</span>
   <span class="lk">
-    <span>
-      <a href="">
-        <i class="fa badge" style="font-size:24px" value=0>&#xf07a;</i>
-      </a>
-    </span>
-    <a href="#" (click)="$event.preventDefault(); onProfileClick()" *ngIf="authService.isAuthenticated()">Личный кабинет</a>
+
+    <button type="button" class="btn btn-secondary">
+      Cart <span class="badge badge-dark">{{size}}</span>
+    </button>
+
+    <a href="#" (click)="$event.preventDefault(); onProfileClick()"
+       *ngIf="authService.isAuthenticated()">Личный кабинет</a>
     <a href="#" (click)="$event.preventDefault(); onProfileClick()" *ngIf="!authService.isAuthenticated()">Log in</a>
   </span>
   <div class="profile" *ngIf="isProfilePageVisible">

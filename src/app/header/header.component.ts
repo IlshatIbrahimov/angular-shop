@@ -1,19 +1,30 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {ProfileGuard} from '../guard/profile-guard';
+import {CartService} from '../services/cart.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
-  constructor(public authService: AuthService, private loginGuard: ProfileGuard) {
+  constructor(
+    public authService: AuthService,
+    private loginGuard: ProfileGuard,
+    private cart: CartService
+  ) {
+  }
+
+
+  ngOnInit(): void {
+    this.cart.countSource.subscribe((size) => this.size = size);
   }
 
   name = '';
   isProfilePageVisible = false;
+  size = 0;
 
   onProfileClick() {
     if (!this.isProfilePageVisible && !this.loginGuard.canActivate()) {
