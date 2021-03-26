@@ -11,8 +11,6 @@ $color-primary: #242323;
   font-size: $font-size;
   background-size: 200% 100% !important;
   animation: move 10s ease infinite;
-  //background: linear-gradient(45deg, #49D49D 10%, #A2C7E5 90%) !important;
-  background-color: #F3F0EB;
   height: calc(100vh - 3rem);
 }
 
@@ -52,11 +50,14 @@ $color-primary: #242323;
 }
 
 .form__input {
+  border-radius: 10px;
+  border-width: 0.5px;
+  border-color: #242323;
   display: block;
   width: 100%;
   padding: 20px;
+  margin-bottom: 10px;
   -webkit-appearance: none;
-  border: 0;
   outline: 0;
   transition: 0.1s;
 
@@ -71,6 +72,7 @@ $color-primary: #242323;
   padding: 10px;
   outline: 0;
   border: 0;
+  border-radius: 10px;
   color: white;
   background: $color-primary;
   margin: 1.5rem auto;

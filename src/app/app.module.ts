@@ -6,7 +6,6 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {MenuComponent} from './menu/menu.component';
-import {MainPageComponent} from './main_page/main_page.component';
 import {LoginComponent} from './login/login.component';
 import {HeaderComponent} from './header/header.component';
 import {FormsModule} from '@angular/forms';
@@ -18,8 +17,7 @@ import {ItemComponent} from './item/item.component';
 import {CartComponent} from './cart/cart.component';
 
 const appRoutes: Routes = [
-  {path: '', component: MainPageComponent},
-  {path: 'menu', component: MenuComponent},
+  {path: '', component: MenuComponent},
   {path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
   {path: 'register', component: RegisterComponent, canActivate: [LoginGuard]},
   {path: 'cart', component: CartComponent}
@@ -29,7 +27,6 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     MenuComponent,
-    MainPageComponent,
     LoginComponent,
     HeaderComponent,
     RegisterComponent,

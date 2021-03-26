@@ -1,20 +1,18 @@
 <header>
   <span>
-    <button *ngIf="router.url !== '/menu'" class="menu" routerLink="/menu">Меню</button>
+    <button *ngIf="router.url !== '/'" class="menu" routerLink="/">Меню</button>
   </span>
-  <span class="address">Ул. Профсоюзная 4, Казань | Ежедневно с 10:00 до 22:00</span>
+  <span class="address">Pizza club</span>
   <span class="lk">
 
     <button type="button" class="btn btn-secondary" routerLink="/cart">
-      Cart <span class="badge badge-dark">{{size}}</span>
+      Корзина <span class="badge badge-dark">{{size}}</span>
     </button>
 
-    <a href="#" (click)="$event.preventDefault(); onProfileClick()"
-       *ngIf="authService.isAuthenticated()">Личный кабинет</a>
-    <a href="#" (click)="$event.preventDefault(); onProfileClick()" *ngIf="!authService.isAuthenticated()">Войти</a>
+    <a href="#" (click)="$event.preventDefault(); onProfileClick()">Профиль</a>
   </span>
   <div class="profile" *ngIf="isProfilePageVisible">
-    <div>{{name}}</div>
+    <span>{{name}}</span>
     <button class="btn" (click)="logout()">Выйти</button>
   </div>
 </header>

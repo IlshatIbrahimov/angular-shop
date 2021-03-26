@@ -24,14 +24,16 @@ export class HeaderComponent implements OnInit {
   }
 
   name = '';
+  surname = '';
   isProfilePageVisible = false;
   size = 0;
 
   onProfileClick() {
-    if (!this.isProfilePageVisible && !this.loginGuard.canActivate()) {
+    if (!this.loginGuard.canActivate()) {
       return;
     }
     this.name = localStorage.getItem('NAME') || '';
+    this.surname = localStorage.getItem('SURNAME') || '';
     this.isProfilePageVisible = !this.isProfilePageVisible;
   }
 

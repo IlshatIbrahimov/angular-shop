@@ -44,13 +44,6 @@ export class CartService {
 
   getSize() {
     let cart = JSON.parse(localStorage.getItem('CART') as string || '{}');
-    let result = 0;
-
-    for (const [key, value] of Object.entries(cart)) {
-      result += value.count;
-    }
-
-    // return Object.keys(cart).length;
-    return result;
+    return Object.keys(cart).length;
   }
 }

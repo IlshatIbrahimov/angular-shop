@@ -1,7 +1,7 @@
 header {
-  background-color: #242323;
+  background-color: #f3f0eb;
   height: 3rem;
-  color: #E8E8E8;
+  color: #000000;
   line-height: 3rem;
   letter-spacing: 0.05rem;
   display: flex;
@@ -14,6 +14,8 @@ header {
 
   span.address {
     width: 40%;
+    font-weight: bold;
+    font-size: x-large;
   }
 
   span.lk {
@@ -21,7 +23,7 @@ header {
     padding-right: 4rem;
 
     a {
-      color: #E8E8E8;
+      color: #000000;
     }
   }
 }
@@ -42,10 +44,10 @@ header {
   width: 200px;
   height: 130px;
 
-  font-size: 2rem;
+  font-size: 15px;
 
-  background-color: #242323;
-  color: #E8E8E8;
+  background-color: #f3f0eb;
+  color: #000000;
   border-radius: 10px;
 
   button {
@@ -55,6 +57,7 @@ header {
 
 .btn-secondary {
   margin-right: 2rem;
+  width: 130px;
   padding: 0.05rem;
   background-color: #f3f0eb;
   color: black;
@@ -64,6 +67,6 @@ button.menu {
   background-color: transparent;
   width: 40%;
   border: none;
-  color: white;
+  color: #000000;
   font-size: 1vw;
 }

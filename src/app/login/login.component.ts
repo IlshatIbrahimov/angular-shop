@@ -7,7 +7,7 @@ import {AuthService} from '../services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  
   constructor(public authService: AuthService) {
   }
 
