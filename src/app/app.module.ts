@@ -15,6 +15,7 @@ import {LoginGuard} from './guard/login-guard';
 import {GroupComponent} from './group/group.component';
 import {ItemComponent} from './item/item.component';
 import {CartComponent} from './cart/cart.component';
+import { FooterComponent } from './footer/footer.component';
 
 const appRoutes: Routes = [
   {path: '', component: MenuComponent},
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     GroupComponent,
     ItemComponent,
-    CartComponent
+    CartComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
