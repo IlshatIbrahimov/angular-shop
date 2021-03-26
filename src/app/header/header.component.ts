@@ -19,7 +19,6 @@ export class HeaderComponent implements OnInit {
   ) {
   }
 
-
   ngOnInit(): void {
     this.cart.countSource.subscribe((size) => this.size = size);
   }

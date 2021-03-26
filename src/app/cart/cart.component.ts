@@ -13,6 +13,7 @@ export class CartComponent implements OnInit {
 
   items: any = {};
   name: any = '';
+  total: any = 0;
 
   constructor(
     private cart: CartService,
@@ -25,6 +26,8 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.cart.cartSource.subscribe(items => this.items = items);
     this.items = JSON.parse(localStorage.getItem('CART') as string || '{}');
+    console.log(this.cart.getSize())
+    this.total = this.cart.getSize();
   }
 
   getPrice() {

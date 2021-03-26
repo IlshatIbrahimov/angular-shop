@@ -16,7 +16,7 @@ export class CartService {
     cart[item.id] = item;
     localStorage.setItem('CART', JSON.stringify(cart));
     this.countSource.next(this.getSize());
-    this.cartSource.next(cart)
+    this.cartSource.next(cart);
   }
 
   removeFromCart(item, count) {
@@ -25,13 +25,13 @@ export class CartService {
       delete cart[item.id];
       localStorage.setItem('CART', JSON.stringify(cart));
       this.countSource.next(this.getSize());
-      this.cartSource.next(cart)
+      this.cartSource.next(cart);
       return;
     }
     item.count = count;
     cart[item.id] = item;
     localStorage.setItem('CART', JSON.stringify(cart));
-    this.cartSource.next(cart)
+    this.cartSource.next(cart);
   }
 
   getCount(id) {
@@ -44,6 +44,13 @@ export class CartService {
 
   getSize() {
     let cart = JSON.parse(localStorage.getItem('CART') as string || '{}');
-    return Object.keys(cart).length;
+    let result = 0;
+
+    for (const [key, value] of Object.entries(cart)) {
+      result += value.count;
+    }
+
+    // return Object.keys(cart).length;
+    return result;
   }
 }
