@@ -16,12 +16,14 @@ import {GroupComponent} from './group/group.component';
 import {ItemComponent} from './item/item.component';
 import {CartComponent} from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 const appRoutes: Routes = [
   {path: '', component: MenuComponent},
   {path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
   {path: 'register', component: RegisterComponent, canActivate: [LoginGuard]},
-  {path: 'cart', component: CartComponent}
+  {path: 'cart', component: CartComponent},
+  {path: 'contacts', component: ContactsComponent}
 ];
 
 @NgModule({
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     GroupComponent,
     ItemComponent,
     CartComponent,
-    FooterComponent
+    FooterComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
