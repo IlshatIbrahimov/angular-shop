@@ -6,6 +6,9 @@
         <app-item [item]="item.value"></app-item>
       </div>
     </div>
+
+    <div>Всего товаров: {{this.cart.getSize()}}</div>
+
     <button (click)="open(content)">Оформить</button>
   </div>
 </div>

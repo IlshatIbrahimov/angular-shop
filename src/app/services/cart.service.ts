@@ -9,7 +9,7 @@ export class CartService {
 
   public countSource = new BehaviorSubject<number>(this.getSize());
   public cartSource = new BehaviorSubject<number>(localStorage.getItem('CART'));
-
+  
   addToCart(item, count) {
     let cart = JSON.parse(localStorage.getItem('CART') as string || '{}');
     item.count = count;

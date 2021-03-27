@@ -11,7 +11,7 @@ $color-primary: #242323;
   font-size: $font-size;
   background-size: 200% 100% !important;
   animation: move 10s ease infinite;
-  height: calc(100vh - 3rem);
+  min-height: calc(90vh - 3rem);
 }
 
 .user {
@@ -86,6 +86,11 @@ $color-primary: #242323;
   text-align: center;
   width: 100%;
   color: white;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
 }
 
 @keyframes NO {

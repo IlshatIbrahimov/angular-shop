@@ -11,7 +11,11 @@ export class RegisterComponent implements OnInit{
   constructor(public authService: AuthService) {
   }
 
+  errorMessage: any = null;
+
   ngOnInit(): void {
     this.authService.refreshVariables();
+    this.authService.isError.subscribe(message => this.errorMessage = message);
+    this.errorMessage = null;
   }
 }

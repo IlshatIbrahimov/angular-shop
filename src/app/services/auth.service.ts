@@ -2,6 +2,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,8 @@ export class AuthService {
   surname = '';
   email = '';
   password = '';
+
+  public isError = new BehaviorSubject<string>();
 
   constructor(private http: HttpClient, private router: Router) {
   }
@@ -29,7 +32,7 @@ export class AuthService {
       localStorage.setItem('ID', response.user.id);
       this.router.navigate(['/']);
     }, error => {
-      console.log(error);
+      this.isError.next("Пользователь с таким email уже существует!");
     });
   }
 
@@ -45,7 +48,7 @@ export class AuthService {
       console.log('success login');
       this.router.navigate(['/']);
     }, error => {
-      console.log(error);
+      this.isError.next("Неверные данные!");
     });
   }
 

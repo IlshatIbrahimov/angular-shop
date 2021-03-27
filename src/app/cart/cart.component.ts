@@ -15,7 +15,7 @@ export class CartComponent implements OnInit {
   name: any = '';
 
   constructor(
-    private cart: CartService,
+    public cart: CartService,
     public profileGuard: ProfileGuard,
     private modalService: NgbModal,
     private router: Router) {
@@ -36,10 +36,7 @@ export class CartComponent implements OnInit {
 
     this.name = localStorage.getItem('NAME');
     let modalReference = this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
-    modalReference.result.then((result) => {
-    }, (reason) => {
-      this.router.navigate(['/menu']);
-    });
-
+    localStorage.removeItem('CART');
+    this.router.navigate(['/']);
   }
 }

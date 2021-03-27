@@ -20,6 +20,8 @@
         <input type="password" placeholder="Password" class="form__input" [(ngModel)]="authService.password" name="password"/>
       </div>
 
+      <div class="error-message">{{errorMessage}}</div>
+
       <div class="btn-div">
         <button class="btn" type="submit">Зарегистрироваться</button>
       </div>
