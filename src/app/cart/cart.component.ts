@@ -36,7 +36,7 @@ export class CartComponent implements OnInit {
 
     this.name = localStorage.getItem('NAME');
     let modalReference = this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'});
-    localStorage.removeItem('CART');
+    this.cart.clearCart();
     this.router.navigate(['/']);
   }
 }

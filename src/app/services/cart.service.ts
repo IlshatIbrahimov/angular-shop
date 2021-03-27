@@ -34,6 +34,11 @@ export class CartService {
     this.cartSource.next(cart);
   }
 
+  clearCart() {
+    localStorage.removeItem('CART');
+    this.countSource.next(this.getSize());
+  }
+
   getCount(id) {
     let cart = JSON.parse(localStorage.getItem('CART') as string || '{}');
     if (!cart.hasOwnProperty(id)) {
